@@ -1,0 +1,71 @@
+### Register User
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "username": "revant",
+    "email": "rav65@gmail.com",
+    "password": "passworr"
+}
+
+### Login User
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "rav65@gmail.com",
+    "password": "passworr"
+}
+
+### Create a New Transaction with user token 
+POST http://localhost:3000/api/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoicmF2NjVAZ21haWwuY29tIiwiaWF0IjoxNzI5NjM5NDgxfQ.Rd2Xmez5LYsP9KTiyfNfRJczTiLjXMzGJj220Z9Ayz8
+Content-Type: application/json
+
+{
+    "type": "expense",
+    "category": "it",
+    "amount": 19000,
+    "date": "2024-03-01",
+    "description": "KA"
+}
+
+### get all Transactions of all users
+GET http://localhost:3000/api/transactions
+
+### get all Transactions which are made by the user with authentication
+GET http://localhost:3000/api/transactions-user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoicmF2NjVAZ21haWwuY29tIiwiaWF0IjoxNzI5NjM5NDgxfQ.Rd2Xmez5LYsP9KTiyfNfRJczTiLjXMzGJj220Z9Ayz8
+Content-Type: application/json
+
+### get all Transactions by transaction id
+GET http://localhost:3000/api/transactions/2
+
+
+### update transaction data using transaction id
+PUT http://localhost:3000/api/transactions/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoicmF2NjVAZ21haWwuY29tIiwiaWF0IjoxNzI5NjM5NDgxfQ.Rd2Xmez5LYsP9KTiyfNfRJczTiLjXMzGJj220Z9Ayz8
+Content-Type: application/json
+
+{
+    "type": "income",
+    "category": "it",
+    "amount": 20000,
+    "date": "2024-12-12",
+    "description": "getting little "
+}
+
+
+### delete transaction data using transaction id
+DELETE  http://localhost:3000/api/transactions/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoicmF2NjVAZ21haWwuY29tIiwiaWF0IjoxNzI5NjM5NDgxfQ.Rd2Xmez5LYsP9KTiyfNfRJczTiLjXMzGJj220Z9Ayz8
+
+
+### get summary for transactions and monthly and startdate and enddate with category for specific user 
+GET http://localhost:3000/api/summary-user?startDate=2024-01-01&endDate=2024-12-13&category=it
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoicmF2NjVAZ21haWwuY29tIiwiaWF0IjoxNzI5NjM5NDgxfQ.Rd2Xmez5LYsP9KTiyfNfRJczTiLjXMzGJj220Z9Ayz8
+Content-Type: application/json
+
+### for pagination 
+GET http://localhost:3000/api/transactions-pagination?page=2&limit=5
+Content-Type: application/json

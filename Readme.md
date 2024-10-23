@@ -136,3 +136,8 @@ Secure Password Storage: Passwords are hashed using bcrypt before storing in the
 Input Validation: Ensures proper data handling for registration, login, and transaction management.
 Running the Project
 Make sure to configure the SECRET_KEY for JWT in the project to ensure secure token generation and validation. Adjust database configuration if needed.
+
+
+NOTE: Additional features Implement basic user authentication and link transactions to specific users.
+Add pagination to the GET /transactions endpoint to handle large volumes of data.
+Create an endpoint for generating reports, such as monthly spending by category.(summary) also added.

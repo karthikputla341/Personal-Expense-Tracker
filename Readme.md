@@ -141,3 +141,5 @@ Make sure to configure the SECRET_KEY for JWT in the project to ensure secure to
 NOTE: Additional features Implement basic user authentication and link transactions to specific users.
 Add pagination to the GET /transactions endpoint to handle large volumes of data.
 Create an endpoint for generating reports, such as monthly spending by category.(summary) also added.
+
+there is a .http file api end points please check it.
